@@ -1,8 +1,6 @@
-import { BrowserRouter, Link, Switch, Route } from "react-router-dom";
+import { BrowserRouter, Link } from "react-router-dom";
+import { Router } from "./router/Router";
 
-import { Home } from "./Home";
-import { Page1 } from "./Page1";
-import { Page2 } from "./Page2";
 import "./styles.css";
 
 export default function App() {
@@ -11,21 +9,11 @@ export default function App() {
       <div className="App">
         <Link to="/">Home</Link>
         <br />
-        <Link to="Page1">Page1</Link>
+        <Link to="/page1">Page1</Link>
         <br />
-        <Link to="Page2">Page2</Link>
+        <Link to="/page2">Page2</Link>
       </div>
-      <Switch>
-        <Route exact path="/">
-          <Home />
-        </Route>
-        <Route exact path="/page1">
-          <Page1 />
-        </Route>
-        <Route exact path="/page2">
-          <Page2 />
-        </Route>
-      </Switch>
+      <Router />
     </BrowserRouter>
   );
 }
